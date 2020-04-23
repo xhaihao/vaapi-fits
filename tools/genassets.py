@@ -29,7 +29,7 @@ spec = dict(
     extension = "h264",
   ),
   hevc = dict(
-    encoder = "vaapih265enc ! h265parse",
+    encoder = "vaapih265enc low-delay-b=1 ! h265parse",
     decoder = "h265parse ! vaapih265dec",
     extension = "h265",
   ),

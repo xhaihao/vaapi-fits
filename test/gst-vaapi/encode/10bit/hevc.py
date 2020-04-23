@@ -20,6 +20,7 @@ class HEVC10EncoderTest(EncoderTest):
       gstmediatype  = "video/x-h265",
       gstparser     = "h265parse",
       lowpower      = False,
+      lowdelayb     = 1,
     )
     super(HEVC10EncoderTest, self).before()
 

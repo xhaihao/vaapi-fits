@@ -50,7 +50,7 @@ class TranscoderTest(slash.Test):
       ),
       "hevc-8" : dict(
         sw = (dict(maxres = (16384, 16384)), have_gst_element("x265enc"), "videoconvert dither=0 ! video/x-raw,format=I420 ! x265enc ! video/x-h265,profile=main ! h265parse"),
-        hw = (platform.get_caps("encode", "hevc_8"), have_gst_element("vaapih265enc"), "vaapih265enc ! video/x-h265,profile=main ! h265parse"),
+        hw = (platform.get_caps("encode", "hevc_8"), have_gst_element("vaapih265enc"), "vaapih265enc low-delay-b=1 ! video/x-h265,profile=main ! h265parse"),
       ),
       "mpeg2" : dict(
         sw = (dict(maxres = (2048, 2048)), have_gst_element("avenc_mpeg2video"), "avenc_mpeg2video ! mpegvideoparse"),
